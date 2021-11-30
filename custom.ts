@@ -188,7 +188,7 @@ export function microbit2_denkiLED() {
     //% color="#009A00"  weight=81 blockId=tempurature_condition block="温度が |%limit| より高ければ" group="3 microbitの光ｾﾝｻ"
     //% limit.min=0 limit.max=100
     export function tempurature_condition(limit: number): boolean {
-        if (input.lightLevel() / 254 * 100 < limit) {
+        if (BMP280.temperature()  < limit) {
             return true;
         } else {
             return false;
@@ -201,7 +201,7 @@ export function microbit2_denkiLED() {
         return BMP280.temperature();
     }
 
-    //% color="#a0522d"  weight=79 blockId=temperature_DISP block="人感ｾﾝｻの値を表示する" group="2 iːo人感センサー"
+    //% color="#a0522d"  weight=79 blockId=temperature_DISP block="温度を表示する" group="2 iːo人感センサー"
     export function temperature_DISP() {
 
         basic.showNumber(BMP280.temperature())
@@ -209,7 +209,27 @@ export function microbit2_denkiLED() {
 
 
 
+    //% color="#009A00"  weight=81 blockId=press_condition block="気圧(hp)が |%limit| より高ければ" group="3 microbitの光ｾﾝｻ"
+    //% limit.min=0 limit.max=100
+    export function press_condition(limit: number): boolean {
+        if (BMP280.pressure()  < limit) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
+    //% color="#a0522d" weight=34 blockId=press block="気圧(hp)" group="2 iːo人感センサー"
+    export function press(): number {
+
+        return BMP280.pressure();
+    }
+
+    //% color="#a0522d"  weight=79 blockId=press_DISP block="気圧(hp)を表示する" group="2 iːo人感センサー"
+    export function press_DISP() {
+
+        basic.showNumber(BMP280.pressure());
+    }
 
 
 
