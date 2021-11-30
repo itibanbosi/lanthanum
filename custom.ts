@@ -131,4 +131,56 @@ namespace natumi_blocks {
     export function driveForwards(second: number): void {
         basic.pause(second * 1000);
     }
+
+
+
+//% color="#a0522d" weight=36 block="人が動いたら" group="2 iːo人感センサー"
+export function humanDetection() : boolean {
+    pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
+    if (pins.digitalReadPin(DigitalPin.P14) == 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//% color="#a0522d" weight=34 blockId=IO_human block="人感ｾﾝｻ値" group="2 iːo人感センサー"
+export function IO_human(): number {
+    pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
+    return pins.digitalReadPin(DigitalPin.P14);
+}
+
+//% color="#a0522d"  weight=79 blockId=IO_human_DISP block="人感ｾﾝｻの値を表示する" group="2 iːo人感センサー"
+export function IO_human_DISP() {
+
+    pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
+    basic.showNumber(pins.digitalReadPin(DigitalPin.P14));
+}
+
+//% color="#009A00"  weight=81 blockId=microbit2_decideLight block="m:bit光ｾﾝｻ値 |%limit| より暗い" group="3 microbitの光ｾﾝｻ"
+//% limit.min=0 limit.max=100
+export function microbit2_decideLight(limit: number): boolean {
+    if (input.lightLevel() / 254 * 100 < limit) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+
+//% color="#009A00"  weight=80 blockId=microbit2_denkitemp block="m:bit光ｾﾝｻ値" group="3 microbitの光ｾﾝｻ"
+export function microbit2_denkitemp(): number {
+
+    return Math.round(input.lightLevel() / 254 * 100);
+
+}
+
+
+//% color="#228b22"  weight=82 blockId=microbit2_denkiLED block="m:bit光ｾﾝｻの値を表示する" group="3 microbitの光ｾﾝｻ"
+export function microbit2_denkiLED() {
+    basic.showNumber(Math.round(input.lightLevel() / 254 * 100));
+}
+
+
 }
