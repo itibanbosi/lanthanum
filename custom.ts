@@ -183,4 +183,37 @@ export function microbit2_denkiLED() {
 }
 
 
+
+
+    //% color="#009A00"  weight=81 blockId=tempurature_condition block="温度が |%limit| より高ければ" group="3 microbitの光ｾﾝｻ"
+    //% limit.min=0 limit.max=100
+    export function tempurature_condition(limit: number): boolean {
+        if (input.lightLevel() / 254 * 100 < limit) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //% color="#a0522d" weight=34 blockId=Temperature block="温度" group="2 iːo人感センサー"
+    export function Temperature(): number {
+
+        return BMP280.temperature();
+    }
+
+    //% color="#a0522d"  weight=79 blockId=temperature_DISP block="人感ｾﾝｻの値を表示する" group="2 iːo人感センサー"
+    export function temperature_DISP() {
+
+        basic.showNumber(BMP280.temperature())
+    }
+
+
+
+
+
+
+
+
+
+
 }
