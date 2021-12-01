@@ -27,15 +27,15 @@ namespace natumi_blocks {
             
 
             case LED_color.yellow:
-                pins.digitalWritePin(DigitalPin.P1, 0);
-                pins.digitalWritePin(DigitalPin.P15, 1);
+                pins.digitalWritePin(DigitalPin.P1, 1);
+                pins.digitalWritePin(DigitalPin.P15, 0);
                 pins.digitalWritePin(DigitalPin.P16, 1);
 
             return
                 
             case LED_color.green:
-                pins.digitalWritePin(DigitalPin.P1, 0);
-                pins.digitalWritePin(DigitalPin.P15, 1);
+                pins.digitalWritePin(DigitalPin.P1, 1);
+                pins.digitalWritePin(DigitalPin.P15, 0);
                 pins.digitalWritePin(DigitalPin.P16, 0);
 
 
@@ -49,14 +49,14 @@ namespace natumi_blocks {
                     return
 
             case LED_color.Blue:
-                pins.digitalWritePin(DigitalPin.P1, 1);
-                pins.digitalWritePin(DigitalPin.P15, 0);
+                pins.digitalWritePin(DigitalPin.P1, 0);
+                pins.digitalWritePin(DigitalPin.P15, 1);
                 pins.digitalWritePin(DigitalPin.P16, 0);
                     return
                 
             case LED_color.purple:
-                pins.digitalWritePin(DigitalPin.P1, 1);
-                pins.digitalWritePin(DigitalPin.P15, 0);
+                pins.digitalWritePin(DigitalPin.P1, 0);
+                pins.digitalWritePin(DigitalPin.P15, 1);
                 pins.digitalWritePin(DigitalPin.P16, 1);
 
                     return
