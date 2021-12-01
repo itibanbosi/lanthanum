@@ -24,6 +24,9 @@ namespace natumi_blocks {
 
     //% color="#858585" weight=54 blockId=eureka_fullcolor block="ＬＥＤ |%color|色 " group="2_にじ色ＬＥＤ"
     export function eureka_fullcolor(color: LED_color) {
+        pins.analogSetPeriod(AnalogPin.P1, 2000)
+        pins.analogSetPeriod(AnalogPin.P15, 2000)
+        pins.analogSetPeriod(AnalogPin.P16, 2000)
         switch (color) {
             case LED_color.Red:
                 pins.digitalWritePin(DigitalPin.P1, 0);
