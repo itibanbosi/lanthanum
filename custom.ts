@@ -71,30 +71,30 @@ namespace natumi_blocks {
     }
 
 
-    //% color="#858585" weight=54 blockId=fullcolor_power block="ＬＥＤ|%color|色 明るさ|%power|" group="2_にじ色ＬＥＤ"
-    export function fullcolor_power(color: LED_color, power: number) {
-    //% power.min=0 power.max=1023
+    //% color="#858585" weight=54 blockId=fullcolor_power block="ＬＥＤ|%color|色 明るさ|%limit|" group="2_にじ色ＬＥＤ"
+    export function fullcolor_power(color: LED_color, limit: number) {
+    //% limit.min=0 limit.max=1023
         switch (color) {
             case LED_color.Red:
                 pins.analogWritePin(AnalogPin.P1, 0)
                 pins.analogWritePin(AnalogPin.P15, 0)
-                pins.analogWritePin(AnalogPin.P16, power)
+                pins.analogWritePin(AnalogPin.P16, limit)
                 pins.analogSetPeriod(AnalogPin.P1, 2000)
                 pins.analogSetPeriod(AnalogPin.P15, 2000)
                 pins.analogSetPeriod(AnalogPin.P16, 2000)
                 return
 
             case LED_color.yellow:
-                pins.analogWritePin(AnalogPin.P1, power)
+                pins.analogWritePin(AnalogPin.P1, limit)
                 pins.analogWritePin(AnalogPin.P15, 0)
-                pins.analogWritePin(AnalogPin.P16, power)
+                pins.analogWritePin(AnalogPin.P16, limit)
                 pins.analogSetPeriod(AnalogPin.P1, 2000)
                 pins.analogSetPeriod(AnalogPin.P15, 2000)
                 pins.analogSetPeriod(AnalogPin.P16, 2000)
                 return
 
             case LED_color.green:
-                pins.analogWritePin(AnalogPin.P1, power)
+                pins.analogWritePin(AnalogPin.P1, limit)
                 pins.analogWritePin(AnalogPin.P15, 0)
                 pins.analogWritePin(AnalogPin.P16, 0)
                 pins.analogSetPeriod(AnalogPin.P1, 2000)
@@ -103,8 +103,8 @@ namespace natumi_blocks {
                 return
 
             case LED_color.water:
-                pins.analogWritePin(AnalogPin.P1, power)
-                pins.analogWritePin(AnalogPin.P15, power)
+                pins.analogWritePin(AnalogPin.P1, limit)
+                pins.analogWritePin(AnalogPin.P15, limit)
                 pins.analogWritePin(AnalogPin.P16, 0)
                 pins.analogSetPeriod(AnalogPin.P1, 2000)
                 pins.analogSetPeriod(AnalogPin.P15, 2000)
@@ -113,7 +113,7 @@ namespace natumi_blocks {
 
             case LED_color.Blue:
                 pins.analogWritePin(AnalogPin.P1, 0)
-                pins.analogWritePin(AnalogPin.P15, power)
+                pins.analogWritePin(AnalogPin.P15, limit)
                 pins.analogWritePin(AnalogPin.P16, 0)
                 pins.analogSetPeriod(AnalogPin.P1, 2000)
                 pins.analogSetPeriod(AnalogPin.P15, 2000)
@@ -122,17 +122,17 @@ namespace natumi_blocks {
 
             case LED_color.purple:
                 pins.analogWritePin(AnalogPin.P1, 0)
-                pins.analogWritePin(AnalogPin.P15, power)
-                pins.analogWritePin(AnalogPin.P16, power)
+                pins.analogWritePin(AnalogPin.P15, limit)
+                pins.analogWritePin(AnalogPin.P16, limit)
                 pins.analogSetPeriod(AnalogPin.P1, 2000)
                 pins.analogSetPeriod(AnalogPin.P15, 2000)
                 pins.analogSetPeriod(AnalogPin.P16, 2000)
                 return
 
             case LED_color.white:
-                pins.analogWritePin(AnalogPin.P1, power)
-                pins.analogWritePin(AnalogPin.P15, power)
-                pins.analogWritePin(AnalogPin.P16, power)
+                pins.analogWritePin(AnalogPin.P1, limit)
+                pins.analogWritePin(AnalogPin.P15, limit)
+                pins.analogWritePin(AnalogPin.P16, limit)
                 pins.analogSetPeriod(AnalogPin.P1, 2000)
                 pins.analogSetPeriod(AnalogPin.P15, 2000)
                 pins.analogSetPeriod(AnalogPin.P16, 2000)
