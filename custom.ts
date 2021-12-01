@@ -16,13 +16,13 @@ enum LED_color {
 //% color="#ff7b00" block="Eurekaランタン"
 namespace natumi_blocks {
 
-    //% color="#1E90FF" weight=10 block="待ち時間（秒）|%second|" group="1 基本"
+    //% color="#0000cd" weight=10 block="待ち時間（秒）|%second|" group="1 基本"
     //% second.min=0 second.max=10
     export function driveForwards(second: number): void {
         basic.pause(second * 1000);
     }
 
-    //% color="#858585" weight=54 blockId=eureka_fullcolor block="ＬＥＤ |%color|色 " group="2 LED制御"
+    //% color="#ff8c00" weight=54 blockId=eureka_fullcolor block="ＬＥＤ |%color|色 " group="2 LED制御"
     export function eureka_fullcolor(color: LED_color) {
 
         switch (color) {
@@ -71,7 +71,7 @@ namespace natumi_blocks {
     }
 
 
-    //% color="#858585" weight=54 blockId=fullcolor_power block="ＬＥＤ|%color|色 明るさ|%limit| " group="2 LED制御"
+    //% color="#ff8c00" weight=60 blockId=fullcolor_power block="ＬＥＤ|%color|色 明るさ|%limit| " group="2 LED制御"
     //% limit.min=0 limit.max=1023
     export function fullcolor_power(color: LED_color, limit: number) {
 
@@ -141,7 +141,7 @@ namespace natumi_blocks {
         }
     }
 
-    //% color="#cd853f" weight=80 blockId=LED_erace block="ﾌﾙｶﾗｰLEDを全部OFF" group="2 LED制御"
+    //% color="#ff8c00" weight=80 blockId=LED_erace block="ﾌﾙｶﾗｰLEDを全部OFF" group="2 LED制御"
     export function LED_erace() {
         pins.digitalWritePin(DigitalPin.P1, 0);
         pins.digitalWritePin(DigitalPin.P15, 0);
