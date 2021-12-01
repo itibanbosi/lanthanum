@@ -217,7 +217,7 @@ export function microbit2_denkiLED() {
 
 
     //% color="#cd853f"  weight=70 blockId=tempurature_condition block="温度が |%limit| より高ければ" group="5 温度センサー"
-    //% limit.min=0 limit.max=100
+    //% limit.min=-10 limit.max=50
     export function tempurature_condition(limit: number): boolean {
         if (BMP280.temperature()  < limit) {
             return true;
