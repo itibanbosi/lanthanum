@@ -146,20 +146,13 @@ namespace natumi_blocks {
     //% limit2.min=0 limit2.max=1023
     //% limit3.min=0 limit3.max=1023
 
-    export function fullcolor_mix(color: LED_color, limit1: number,limit2:number,limit3:number) {
-
-        switch (color) {
-            case LED_color.Red:
+    export function fullcolor_mix(limit1: number,limit2:number,limit3:number) {
                 pins.analogWritePin(AnalogPin.P1, limit1)
                 pins.analogWritePin(AnalogPin.P15, limit2)
                 pins.analogWritePin(AnalogPin.P16, limit3)
                 pins.analogSetPeriod(AnalogPin.P1, 2000)
                 pins.analogSetPeriod(AnalogPin.P15, 2000)
                 pins.analogSetPeriod(AnalogPin.P16, 2000)
-                return
-
-
-        }
     }
 
 
