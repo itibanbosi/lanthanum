@@ -71,7 +71,7 @@ namespace natumi_blocks {
     }
 
 
-    //% color="#858585" weight=54 blockId=fullcolor_power block="ＬＥＤ|%color|色 明るさ|%limit|" group="2_にじ色ＬＥＤ"
+    //% color="#858585" weight=54 blockId=fullcolor_power block="ＬＥＤ|%color|色 明るさ|%limit| " group="2_にじ色ＬＥＤ"
     export function fullcolor_power(color: LED_color, limit: number) {
     //% limit.min=0 limit.max=1023
         switch (color) {
