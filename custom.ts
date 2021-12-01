@@ -241,7 +241,6 @@ export function microbit2_denkiLED() {
 
 
     //% color="#000080"  weight=30 blockId=press_condition block="気圧(hp)が |%limit| より高ければ" group="6 気圧センサー"
-    //% limit.min=0 limit.max=100
     export function press_condition(limit: number): boolean {
         if (BMP280.pressure()  > limit) {
             return true;
