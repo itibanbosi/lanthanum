@@ -200,16 +200,24 @@ export function IO_human_DISP() {
     basic.showNumber(pins.digitalReadPin(DigitalPin.P14));
 }
 
-//% color="#009A00"  weight=81 blockId=microbit2_decideLight block="m:bit光ｾﾝｻ値 |%limit| より |%koutei|" group="4 microbitの光ｾﾝｻ"
+//% color="#009A00"  weight=81 blockId=microbit2_decideLight block="m:bit光ｾﾝｻ値 |%limit| より |%light|時" group="4 microbitの光ｾﾝｻ"
 //% limit.min=0 limit.max=100
-export function microbit2_decideLight(limit: number): boolean {
-    if (input.lightLevel() / 254 * 100 < limit) {
+export function microbit2_decideLight(limit: number,light:akarusa): boolean {
+    switch (light) {
+        case akarusa.明るい:
+        if (input.lightLevel() / 254 * 100 < limit) {
         return true;
-    } else {
+        } else {
         return false;
+        }
+        case akarusa.暗い:
+            if (input.lightLevel() / 254 * 100 > limit) {
+                return true;
+            } else {
+            return false;
+            }
+        }
     }
-}
-
 
 
 //% color="#009A00"  weight=80 blockId=microbit2_denkitemp block="m:bit光ｾﾝｻ値" group="4 microbitの光ｾﾝｻ"
@@ -228,14 +236,26 @@ export function microbit2_denkiLED() {
 
 
 
-    //% color="#cd853f"  weight=70 blockId=tempurature_condition block="温度が |%limit| より高ければ" group="5 温度センサー"
+    //% color="#cd853f"  weight=70 blockId=tempurature_condition block="温度が |%limit| より|%temp|時" group="5 温度センサー"
     //% limit.min=-10 limit.max=50
-    export function tempurature_condition(limit: number): boolean {
+    export function tempurature_condition(limit: number,temp:koutei): boolean {
+        switch (temp) {
+            case koutei.高い:
+
         if (BMP280.temperature()  > limit) {
             return true;
         } else {
             return false;
         }
+            case koutei.低い:
+
+                if (BMP280.temperature() < limit) {
+                    return true;
+                } else {
+                    return false;
+                }
+        }
+
     }
 
     //% color="#cd853f" weight=34 blockId=Temperature block="温度" group="5 温度センサー"
@@ -252,12 +272,22 @@ export function microbit2_denkiLED() {
 
 
 
-    //% color="#000080"  weight=30 blockId=press_condition block="気圧(hp)が |%limit| より高ければ" group="6 気圧センサー"
-    export function press_condition(limit: number): boolean {
+    //% color="#000080"  weight=30 blockId=press_condition block="気圧(hp)が |%limit| より|%pressure|時" group="6 気圧センサー"
+    export function press_condition(limit: number,pressure:koutei): boolean {
+        switch (pressure) {
+            case koutei.高い:
+
         if (Math.round(BMP280.pressure()/100)  > limit) {
             return true;
         } else {
             return false;
+        }
+        case koutei.低い:
+            if (Math.round(BMP280.pressure() / 100) < limit) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 
