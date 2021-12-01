@@ -72,9 +72,7 @@ namespace natumi_blocks {
 
     //% color="#858585" weight=54 blockId=fullcolor_power block="ＬＥＤ|%color|色 明るさ|%power|" group="2_にじ色ＬＥＤ"
     export function fullcolor_power(color: LED_color, power: number) {
-        pins.digitalWritePin(DigitalPin.P1, 0);
-        pins.digitalWritePin(DigitalPin.P15, 0);
-        pins.digitalWritePin(DigitalPin.P16, 0);
+
         switch (color) {
             case LED_color.Red:
                 pins.analogWritePin(AnalogPin.P1, 0)
