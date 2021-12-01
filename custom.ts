@@ -16,7 +16,21 @@ enum LED_color {
 //% color="#ff7b00" block="Eurekaランタン"
 namespace natumi_blocks {
 
-    //% color="#858585" weight=54 blockId=eureka_fullcolor block="ＬＥＤ |%color|色" group="2_にじ色ＬＥＤ"
+
+
+
+
+
+
+
+
+    //% color="#1E90FF" weight=10 block="待ち時間（秒）|%second|" group="機能"
+    //% second.min=0 second.max=10
+    export function driveForwards(second: number): void {
+        basic.pause(second * 1000);
+    }
+
+    //% color="#858585" weight=54 blockId=eureka_fullcolor block="ＬＥＤ |%color|色 " group="2_にじ色ＬＥＤ"
     export function eureka_fullcolor(color: LED_color) {
         switch (color) {
             case LED_color.Red:
@@ -24,58 +38,93 @@ namespace natumi_blocks {
                 pins.digitalWritePin(DigitalPin.P15, 0);
                 pins.digitalWritePin(DigitalPin.P16, 1);
                 return
-            
 
             case LED_color.yellow:
                 pins.digitalWritePin(DigitalPin.P1, 1);
                 pins.digitalWritePin(DigitalPin.P15, 0);
                 pins.digitalWritePin(DigitalPin.P16, 1);
+                return
 
-            return
-                
             case LED_color.green:
                 pins.digitalWritePin(DigitalPin.P1, 1);
                 pins.digitalWritePin(DigitalPin.P15, 0);
                 pins.digitalWritePin(DigitalPin.P16, 0);
+                return
 
-
-                    return
-                
             case LED_color.water:
                 pins.digitalWritePin(DigitalPin.P1, 1);
                 pins.digitalWritePin(DigitalPin.P15, 1);
                 pins.digitalWritePin(DigitalPin.P16, 0);
-
-                    return
+                return
 
             case LED_color.Blue:
                 pins.digitalWritePin(DigitalPin.P1, 0);
                 pins.digitalWritePin(DigitalPin.P15, 1);
                 pins.digitalWritePin(DigitalPin.P16, 0);
-                    return
-                
+                return
+
             case LED_color.purple:
                 pins.digitalWritePin(DigitalPin.P1, 0);
                 pins.digitalWritePin(DigitalPin.P15, 1);
                 pins.digitalWritePin(DigitalPin.P16, 1);
-
-                    return
+                return
 
             case LED_color.white:
                 pins.digitalWritePin(DigitalPin.P1, 1);
                 pins.digitalWritePin(DigitalPin.P15, 1);
                 pins.digitalWritePin(DigitalPin.P16, 1);
-
-                    return
-
+                return
         }
     }
 
-    //% color="#1E90FF" weight=10 block="待ち時間（秒）|%second|" group="機能"
-    //% second.min=0 second.max=10
-    export function driveForwards(second: number): void {
-        basic.pause(second * 1000);
+
+    //% color="#858585" weight=54 blockId=eureka_fullcolor block="ＬＥＤ |%color|色 明るさ|%power|" group="2_にじ色ＬＥＤ"
+    export function fullcolor_power(color: LED_color, power: number) {
+        switch (color) {
+            case LED_color.Red:
+                pins.analogWritePin(AnalogPin.P1, 0)
+                pins.analogWritePin(AnalogPin.P15, 0)
+                pins.analogWritePin(AnalogPin.P16, power)
+                return
+
+            case LED_color.yellow:
+                pins.analogWritePin(AnalogPin.P1, power)
+                pins.analogWritePin(AnalogPin.P15, 0)
+                pins.analogWritePin(AnalogPin.P16, power)
+                return
+
+            case LED_color.green:
+                pins.analogWritePin(AnalogPin.P1, power)
+                pins.analogWritePin(AnalogPin.P15, 0)
+                pins.analogWritePin(AnalogPin.P16, 0)
+                return
+
+            case LED_color.water:
+                pins.analogWritePin(AnalogPin.P1, power)
+                pins.analogWritePin(AnalogPin.P15, power)
+                pins.analogWritePin(AnalogPin.P16, 0)
+                return
+
+            case LED_color.Blue:
+                pins.analogWritePin(AnalogPin.P1, 0)
+                pins.analogWritePin(AnalogPin.P15, power)
+                pins.analogWritePin(AnalogPin.P16, 0)
+                return
+
+            case LED_color.purple:
+                pins.analogWritePin(AnalogPin.P1, 0)
+                pins.analogWritePin(AnalogPin.P15, power)
+                pins.analogWritePin(AnalogPin.P16, power)
+                return
+
+            case LED_color.white:
+                pins.analogWritePin(AnalogPin.P1, power)
+                pins.analogWritePin(AnalogPin.P15, power)
+                pins.analogWritePin(AnalogPin.P16, power)
+                return
+        }
     }
+
 
 
 
