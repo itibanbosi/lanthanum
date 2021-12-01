@@ -29,7 +29,6 @@ enum koutei {
 namespace natumi_blocks {
 
     //% color="#0000cd" weight=10 block="待ち時間（秒）|%second|" group="1 基本"
-    //% second.min=0 second.max=10
     export function driveForwards(second: number): void {
         basic.pause(second * 1000);
     }
