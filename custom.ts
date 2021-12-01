@@ -242,14 +242,14 @@ export function microbit2_denkiLED() {
         switch (temp) {
             case koutei.以上:
 
-        if (BMP280.temperature()  > limit) {
+        if (BMP280.temperature()  >= limit) {
             return true;
         } else {
             return false;
         }
             case koutei.以下:
 
-                if (BMP280.temperature() < limit) {
+                if (BMP280.temperature() <= limit) {
                     return true;
                 } else {
                     return false;
