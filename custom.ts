@@ -19,8 +19,8 @@ enum akarusa {
 }
 
 enum koutei {
-    高い,
-    低い,
+    以上,
+    以下,
 }
 
 
@@ -236,18 +236,18 @@ export function microbit2_denkiLED() {
 
 
 
-    //% color="#cd853f"  weight=70 blockId=tempurature_condition block="温度が |%limit| より|%temp|時" group="5 温度センサー"
+    //% color="#cd853f"  weight=70 blockId=tempurature_condition block="温度が |%limit| |%temp|の時" group="5 温度センサー"
     //% limit.min=-10 limit.max=50
     export function tempurature_condition(limit: number,temp:koutei): boolean {
         switch (temp) {
-            case koutei.高い:
+            case koutei.以上:
 
         if (BMP280.temperature()  > limit) {
             return true;
         } else {
             return false;
         }
-            case koutei.低い:
+            case koutei.以下:
 
                 if (BMP280.temperature() < limit) {
                     return true;
@@ -272,18 +272,18 @@ export function microbit2_denkiLED() {
 
 
 
-    //% color="#000080"  weight=30 blockId=press_condition block="気圧(hp)が |%limit| より|%pressure|時" group="6 気圧センサー"
+    //% color="#000080"  weight=30 blockId=press_condition block="気圧(hp)が |%limit| |%pressure|の時" group="6 気圧センサー"
     export function press_condition(limit: number,pressure:koutei): boolean {
         switch (pressure) {
-            case koutei.高い:
+            case koutei.以上:
 
-        if (Math.round(BMP280.pressure()/100)  > limit) {
+        if (Math.round(BMP280.pressure()/100)  >= limit) {
             return true;
         } else {
             return false;
         }
-        case koutei.低い:
-            if (Math.round(BMP280.pressure() / 100) < limit) {
+        case koutei.以下:
+            if (Math.round(BMP280.pressure() / 100) <= limit) {
                 return true;
             } else {
                 return false;
