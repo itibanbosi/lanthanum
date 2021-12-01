@@ -205,13 +205,13 @@ export function IO_human_DISP() {
 export function microbit2_decideLight(limit: number,light:akarusa): boolean {
     switch (light) {
         case akarusa.明るい:
-        if (input.lightLevel() / 254 * 100 < limit) {
+        if (input.lightLevel() / 254 * 100 > limit) {
         return true;
         } else {
         return false;
         }
         case akarusa.暗い:
-            if (input.lightLevel() / 254 * 100 > limit) {
+            if (input.lightLevel() / 254 * 100 < limit) {
                 return true;
             } else {
             return false;
