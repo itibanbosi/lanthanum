@@ -219,7 +219,7 @@ export function microbit2_denkiLED() {
     //% color="#cd853f"  weight=70 blockId=tempurature_condition block="温度が |%limit| より高ければ" group="5 温度センサー"
     //% limit.min=-10 limit.max=50
     export function tempurature_condition(limit: number): boolean {
-        if (BMP280.temperature()  < limit) {
+        if (BMP280.temperature()  > limit) {
             return true;
         } else {
             return false;
@@ -243,7 +243,7 @@ export function microbit2_denkiLED() {
     //% color="#000080"  weight=30 blockId=press_condition block="気圧(hp)が |%limit| より高ければ" group="6 気圧センサー"
     //% limit.min=0 limit.max=100
     export function press_condition(limit: number): boolean {
-        if (BMP280.pressure()  < limit) {
+        if (BMP280.pressure()  > limit) {
             return true;
         } else {
             return false;
