@@ -71,7 +71,7 @@ namespace natumi_blocks {
     }
 
 
-    //% color="#ff8c00" weight=60 blockId=fullcolor_power block="ＬＥＤ|%color|色 明るさ|%limit| " group="2 LED制御"
+    //% color="#ff8c00" weight=40 blockId=fullcolor_power block="ＬＥＤ|%color|色 明るさ|%limit| " group="2 LED制御"
     //% limit.min=0 limit.max=1023
     export function fullcolor_power(color: LED_color, limit: number) {
 
@@ -141,7 +141,7 @@ namespace natumi_blocks {
         }
     }
 
-    //% color="#ff8c00" weight=80 blockId=LED_erace block="ﾌﾙｶﾗｰLEDを全部OFF" group="2 LED制御"
+    //% color="#ff8c00" weight=30 blockId=LED_erace block="ﾌﾙｶﾗｰLEDを全部OFF" group="2 LED制御"
     export function LED_erace() {
         pins.digitalWritePin(DigitalPin.P1, 0);
         pins.digitalWritePin(DigitalPin.P15, 0);
@@ -224,7 +224,7 @@ export function microbit2_denkiLED() {
 
 
 
-    //% color="#000080"  weight=81 blockId=press_condition block="気圧(hp)が |%limit| より高ければ" group="6 気圧センサー"
+    //% color="#000080"  weight=30 blockId=press_condition block="気圧(hp)が |%limit| より高ければ" group="6 気圧センサー"
     //% limit.min=0 limit.max=100
     export function press_condition(limit: number): boolean {
         if (BMP280.pressure()  < limit) {
