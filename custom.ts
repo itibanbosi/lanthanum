@@ -32,6 +32,9 @@ namespace natumi_blocks {
                 pins.digitalWritePin(DigitalPin.P1, 0);
                 pins.digitalWritePin(DigitalPin.P15, 0);
                 pins.digitalWritePin(DigitalPin.P16, 1);
+                pins.analogSetPeriod(AnalogPin.P1, 2000)
+                pins.analogSetPeriod(AnalogPin.P15, 2000)
+                pins.analogSetPeriod(AnalogPin.P16, 2000)
                 return
 
             case LED_color.yellow:
