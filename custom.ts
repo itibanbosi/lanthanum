@@ -13,6 +13,18 @@ enum LED_color {
     white,
 }
 
+enum akarusa {
+    明るい,
+    暗い,
+}
+
+enum koutei {
+    高い,
+    低い,
+}
+
+
+
 //% color="#ff7b00" block="Eurekaランタン"
 namespace natumi_blocks {
 
@@ -188,7 +200,7 @@ export function IO_human_DISP() {
     basic.showNumber(pins.digitalReadPin(DigitalPin.P14));
 }
 
-//% color="#009A00"  weight=81 blockId=microbit2_decideLight block="m:bit光ｾﾝｻ値 |%limit| より暗い" group="4 microbitの光ｾﾝｻ"
+//% color="#009A00"  weight=81 blockId=microbit2_decideLight block="m:bit光ｾﾝｻ値 |%limit| より |%koutei|" group="4 microbitの光ｾﾝｻ"
 //% limit.min=0 limit.max=100
 export function microbit2_decideLight(limit: number): boolean {
     if (input.lightLevel() / 254 * 100 < limit) {
