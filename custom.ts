@@ -25,7 +25,7 @@ enum koutei {
 
 
 
-//% color="#ff7b00" weight=90 block="EurekaランタンV1"
+//% color="#ff7b00" weight=90 block="ﾗﾝﾌﾟｼｪｰﾄﾞV1.0"
 namespace natumi_blocks {
 
     //% color="#0000cd" weight=10 block="待ち時間（秒）|%second|" group="1 基本"
