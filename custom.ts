@@ -147,9 +147,9 @@ namespace natumi_blocks {
     //% limit3.min=0 limit3.max=1023
 
     export function fullcolor_mix(limit1: number,limit2:number,limit3:number) {
-                pins.analogWritePin(AnalogPin.P1, limit1)
-                pins.analogWritePin(AnalogPin.P15, limit2)
-                pins.analogWritePin(AnalogPin.P16, limit3)
+                pins.analogWritePin(AnalogPin.P1, limit2)
+                pins.analogWritePin(AnalogPin.P15, limit3)
+                pins.analogWritePin(AnalogPin.P16, limit1)
                 pins.analogSetPeriod(AnalogPin.P1, 2000)
                 pins.analogSetPeriod(AnalogPin.P15, 2000)
                 pins.analogSetPeriod(AnalogPin.P16, 2000)
