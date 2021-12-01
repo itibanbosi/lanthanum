@@ -242,7 +242,7 @@ export function microbit2_denkiLED() {
 
     //% color="#000080"  weight=30 blockId=press_condition block="気圧(hp)が |%limit| より高ければ" group="6 気圧センサー"
     export function press_condition(limit: number): boolean {
-        if (BMP280.pressure()/100  > limit) {
+        if (Math.round(BMP280.pressure()/100)  > limit) {
             return true;
         } else {
             return false;
@@ -252,13 +252,13 @@ export function microbit2_denkiLED() {
     //% color="#000080" weight=34 blockId=press block="気圧(hp)" group="6 気圧センサー"
     export function press(): number {
 
-        return BMP280.pressure()/100;
+        return Math.round(BMP280.pressure()/100);
     }
 
     //% color="#000080"  weight=79 blockId=press_DISP block="気圧(hp)を表示する" group="6 気圧センサー"
     export function press_DISP() {
 
-        basic.showNumber(BMP280.pressure()/100);
+        basic.showNumber(Math.round(BMP280.pressure()/100));
     }
 
 
