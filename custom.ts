@@ -88,36 +88,54 @@ namespace natumi_blocks {
                 pins.analogWritePin(AnalogPin.P1, power)
                 pins.analogWritePin(AnalogPin.P15, 0)
                 pins.analogWritePin(AnalogPin.P16, power)
+                pins.analogSetPeriod(AnalogPin.P1, 2000)
+                pins.analogSetPeriod(AnalogPin.P15, 2000)
+                pins.analogSetPeriod(AnalogPin.P16, 2000)
                 return
 
             case LED_color.green:
                 pins.analogWritePin(AnalogPin.P1, power)
                 pins.analogWritePin(AnalogPin.P15, 0)
                 pins.analogWritePin(AnalogPin.P16, 0)
+                pins.analogSetPeriod(AnalogPin.P1, 2000)
+                pins.analogSetPeriod(AnalogPin.P15, 2000)
+                pins.analogSetPeriod(AnalogPin.P16, 2000)
                 return
 
             case LED_color.water:
                 pins.analogWritePin(AnalogPin.P1, power)
                 pins.analogWritePin(AnalogPin.P15, power)
                 pins.analogWritePin(AnalogPin.P16, 0)
+                pins.analogSetPeriod(AnalogPin.P1, 2000)
+                pins.analogSetPeriod(AnalogPin.P15, 2000)
+                pins.analogSetPeriod(AnalogPin.P16, 2000)
                 return
 
             case LED_color.Blue:
                 pins.analogWritePin(AnalogPin.P1, 0)
                 pins.analogWritePin(AnalogPin.P15, power)
                 pins.analogWritePin(AnalogPin.P16, 0)
+                pins.analogSetPeriod(AnalogPin.P1, 2000)
+                pins.analogSetPeriod(AnalogPin.P15, 2000)
+                pins.analogSetPeriod(AnalogPin.P16, 2000)
                 return
 
             case LED_color.purple:
                 pins.analogWritePin(AnalogPin.P1, 0)
                 pins.analogWritePin(AnalogPin.P15, power)
                 pins.analogWritePin(AnalogPin.P16, power)
+                pins.analogSetPeriod(AnalogPin.P1, 2000)
+                pins.analogSetPeriod(AnalogPin.P15, 2000)
+                pins.analogSetPeriod(AnalogPin.P16, 2000)
                 return
 
             case LED_color.white:
                 pins.analogWritePin(AnalogPin.P1, power)
                 pins.analogWritePin(AnalogPin.P15, power)
                 pins.analogWritePin(AnalogPin.P16, power)
+                pins.analogSetPeriod(AnalogPin.P1, 2000)
+                pins.analogSetPeriod(AnalogPin.P15, 2000)
+                pins.analogSetPeriod(AnalogPin.P16, 2000)
                 return
         }
     }
