@@ -16,14 +16,6 @@ enum LED_color {
 //% color="#ff7b00" block="Eurekaランタン"
 namespace natumi_blocks {
 
-
-
-
-
-
-
-
-
     //% color="#1E90FF" weight=10 block="待ち時間（秒）|%second|" group="機能"
     //% second.min=0 second.max=10
     export function driveForwards(second: number): void {
@@ -80,6 +72,9 @@ namespace natumi_blocks {
 
     //% color="#858585" weight=54 blockId=fullcolor_power block="ＬＥＤ|%color|色 明るさ|%power|" group="2_にじ色ＬＥＤ"
     export function fullcolor_power(color: LED_color, power: number) {
+        pins.analogWritePin(AnalogPin.P1, 0)
+        pins.analogWritePin(AnalogPin.P15, 0)
+        pins.analogWritePin(AnalogPin.P16, 0)
         switch (color) {
             case LED_color.Red:
                 pins.analogWritePin(AnalogPin.P1, 0)
