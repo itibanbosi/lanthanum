@@ -16,108 +16,58 @@ enum LED_color {
 //% color="#ff7b00" block="Eurekaランタン"
 namespace natumi_blocks {
 
-    //% color="#858585" weight=54 blockId=eureka_fullcolor block="ＬＥＤ |%color|色 スイッチ|%mode|" group="2_にじ色ＬＥＤ"
-    export function eureka_fullcolor(color: LED_color, mode: onoff) {
+    //% color="#858585" weight=54 blockId=eureka_fullcolor block="ＬＥＤ |%color|色" group="2_にじ色ＬＥＤ"
+    export function eureka_fullcolor(color: LED_color) {
         switch (color) {
             case LED_color.Red:
                 pins.digitalWritePin(DigitalPin.P1, 0);
                 pins.digitalWritePin(DigitalPin.P15, 0);
                 pins.digitalWritePin(DigitalPin.P16, 1);
-                basic.pause(mode);
-                if (mode == 0) {
-                    return
-                } else {
-                    pins.digitalWritePin(DigitalPin.P1, 0);
-                    pins.digitalWritePin(DigitalPin.P15, 0);
-                    pins.digitalWritePin(DigitalPin.P16, 0);
-                    basic.pause(mode);
-                    return
-                }
+                return
+            
 
             case LED_color.yellow:
                 pins.digitalWritePin(DigitalPin.P1, 0);
                 pins.digitalWritePin(DigitalPin.P15, 1);
                 pins.digitalWritePin(DigitalPin.P16, 1);
-                basic.pause(mode);
-                if (mode == 0) {
-                    return
-                } else {
-                    pins.digitalWritePin(DigitalPin.P1, 0);
-                    pins.digitalWritePin(DigitalPin.P15, 0);
-                    pins.digitalWritePin(DigitalPin.P16, 0);
-                    basic.pause(mode);
-                    return
-                }
+
+            return
+                
             case LED_color.green:
                 pins.digitalWritePin(DigitalPin.P1, 0);
                 pins.digitalWritePin(DigitalPin.P15, 1);
                 pins.digitalWritePin(DigitalPin.P16, 0);
-                basic.pause(mode);
-                if (mode == 0) {
+
+
                     return
-                } else {
-                    pins.digitalWritePin(DigitalPin.P1, 0);
-                    pins.digitalWritePin(DigitalPin.P15, 0);
-                    pins.digitalWritePin(DigitalPin.P16, 0);
-                    basic.pause(mode);
-                    return
-                }
+                
             case LED_color.water:
                 pins.digitalWritePin(DigitalPin.P1, 1);
                 pins.digitalWritePin(DigitalPin.P15, 1);
                 pins.digitalWritePin(DigitalPin.P16, 0);
-                basic.pause(mode);
-                if (mode == 0) {
+
                     return
-                } else {
-                    pins.digitalWritePin(DigitalPin.P1, 0);
-                    pins.digitalWritePin(DigitalPin.P15, 0);
-                    pins.digitalWritePin(DigitalPin.P16, 0);
-                    basic.pause(mode);
-                    return
-                }
+
             case LED_color.Blue:
                 pins.digitalWritePin(DigitalPin.P1, 1);
                 pins.digitalWritePin(DigitalPin.P15, 0);
                 pins.digitalWritePin(DigitalPin.P16, 0);
-                basic.pause(mode);
-                if (mode == 0) {
                     return
-                } else {
-                    pins.digitalWritePin(DigitalPin.P1, 0);
-                    pins.digitalWritePin(DigitalPin.P15, 0);
-                    pins.digitalWritePin(DigitalPin.P16, 0);
-                    basic.pause(mode);
-                    return
-                }
+                
             case LED_color.purple:
                 pins.digitalWritePin(DigitalPin.P1, 1);
                 pins.digitalWritePin(DigitalPin.P15, 0);
                 pins.digitalWritePin(DigitalPin.P16, 1);
-                basic.pause(mode);
-                if (mode == 0) {
+
                     return
-                } else {
-                    pins.digitalWritePin(DigitalPin.P1, 0);
-                    pins.digitalWritePin(DigitalPin.P15, 0);
-                    pins.digitalWritePin(DigitalPin.P16, 0);
-                    basic.pause(mode);
-                    return
-                }
+
             case LED_color.white:
                 pins.digitalWritePin(DigitalPin.P1, 1);
                 pins.digitalWritePin(DigitalPin.P15, 1);
                 pins.digitalWritePin(DigitalPin.P16, 1);
-                basic.pause(mode);
-                if (mode == 0) {
+
                     return
-                } else {
-                    pins.digitalWritePin(DigitalPin.P1, 0);
-                    pins.digitalWritePin(DigitalPin.P15, 0);
-                    pins.digitalWritePin(DigitalPin.P16, 0);
-                    basic.pause(mode);
-                    return
-                }
+
         }
     }
 
