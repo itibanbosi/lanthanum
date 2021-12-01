@@ -200,7 +200,7 @@ export function microbit2_denkiLED() {
 
 
 
-    //% color="#009A00"  weight=81 blockId=tempurature_condition block="温度が |%limit| より高ければ" group="5 気象センサー"
+    //% color="#cd853f"  weight=81 blockId=tempurature_condition block="温度が |%limit| より高ければ" group="5 温度センサー"
     //% limit.min=0 limit.max=100
     export function tempurature_condition(limit: number): boolean {
         if (BMP280.temperature()  < limit) {
@@ -210,13 +210,13 @@ export function microbit2_denkiLED() {
         }
     }
 
-    //% color="#a0522d" weight=34 blockId=Temperature block="温度" group="5 気象センサー"
+    //% color="#cd853f" weight=34 blockId=Temperature block="温度" group="5 温度センサー"
     export function Temperature(): number {
 
         return BMP280.temperature();
     }
 
-    //% color="#a0522d"  weight=79 blockId=temperature_DISP block="温度を表示する" group="5 気象センサー"
+    //% color="#cd853f"  weight=79 blockId=temperature_DISP block="温度を表示する" group="5 温度センサー"
     export function temperature_DISP() {
 
         basic.showNumber(BMP280.temperature())
@@ -224,7 +224,7 @@ export function microbit2_denkiLED() {
 
 
 
-    //% color="#009A00"  weight=81 blockId=press_condition block="気圧(hp)が |%limit| より高ければ" group="5 気象センサー"
+    //% color="#000080"  weight=81 blockId=press_condition block="気圧(hp)が |%limit| より高ければ" group="6 気圧センサー"
     //% limit.min=0 limit.max=100
     export function press_condition(limit: number): boolean {
         if (BMP280.pressure()  < limit) {
@@ -234,13 +234,13 @@ export function microbit2_denkiLED() {
         }
     }
 
-    //% color="#a0522d" weight=34 blockId=press block="気圧(hp)" group="5 気象センサー"
+    //% color="#000080" weight=34 blockId=press block="気圧(hp)" group="6 気圧センサー"
     export function press(): number {
 
         return BMP280.pressure();
     }
 
-    //% color="#a0522d"  weight=79 blockId=press_DISP block="気圧(hp)を表示する" group="5 気象センサー"
+    //% color="#000080"  weight=79 blockId=press_DISP block="気圧(hp)を表示する" group="6 気圧センサー"
     export function press_DISP() {
 
         basic.showNumber(BMP280.pressure());
