@@ -141,6 +141,29 @@ namespace natumi_blocks {
         }
     }
 
+    //% color="#ff8c00" weight=38 blockId=fullcolor_mix block="ＬＥＤ混色　R|%limit1| G|%limit2| B|%limit3| " group="2 LED制御"
+    //% limit1.min=0 limit1.max=1023
+    //% limit2.min=0 limit2.max=1023
+    //% limit3.min=0 limit3.max=1023
+
+    export function fullcolor_mix(color: LED_color, limit1: number,limit2:number,limit3:number) {
+
+        switch (color) {
+            case LED_color.Red:
+                pins.analogWritePin(AnalogPin.P1, limit1)
+                pins.analogWritePin(AnalogPin.P15, limit2)
+                pins.analogWritePin(AnalogPin.P16, limit3)
+                pins.analogSetPeriod(AnalogPin.P1, 2000)
+                pins.analogSetPeriod(AnalogPin.P15, 2000)
+                pins.analogSetPeriod(AnalogPin.P16, 2000)
+                return
+
+
+        }
+    }
+
+
+
     //% color="#ff8c00" weight=30 blockId=LED_erace block="ﾌﾙｶﾗｰLEDを全部OFF" group="2 LED制御"
     export function LED_erace() {
         pins.digitalWritePin(DigitalPin.P1, 0);
